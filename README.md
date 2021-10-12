@@ -1,6 +1,6 @@
 [![Release Charts](https://github.com/Plum-ops/plum-helm/actions/workflows/release.yaml/badge.svg)](https://github.com/Plum-ops/plum-helm/actions/workflows/release.yaml)
-# Plumtech Helm Chart Repository
-
+# Plumtech Helm Chart Repository 
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/plum-helm)](https://artifacthub.io/packages/search?repo=plum-helm)
 ## Usage
 
 [Helm](https://helm.sh) must be installed to use the charts.  Please refer to
