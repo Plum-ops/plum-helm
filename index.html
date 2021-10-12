@@ -1,1 +1,16 @@
-test
+<h1 id="plumtech-helm-chart-repository">Plumtech Helm Chart Repository</h1>
+<h2 id="usage">Usage</h2>
+<p><a href="https://helm.sh">Helm</a> must be installed to use the charts.  Please refer to
+Helm&#39;s <a href="https://helm.sh/docs">documentation</a> to get started.</p>
+<p>Once Helm has been set up correctly, add the repo as follows:</p>
+<pre><code class="lang-shell">  helm repo <span class="hljs-built_in">add</span> plum-helm http<span class="hljs-variable">s:</span>//helm.plum-ops.<span class="hljs-keyword">com</span>/
+</code></pre>
+<p>If you had already added this repo earlier, run <code>helm repo update</code> to retrieve
+the latest versions of the packages.  You can then run <code>helm search repo
+plum-helm</code> to see the charts.</p>
+<p>To install the chproxy chart:</p>
+<pre><code class="lang-shell">    helm install <span class="hljs-keyword">my</span>-chproxy plum-helm/chproxy
+</code></pre>
+<p>To uninstall the chart:</p>
+<pre><code class="lang-shell">    helm <span class="hljs-keyword">delete</span> <span class="hljs-keyword">my</span>-chproxy
+</code></pre>
