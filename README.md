@@ -1,3 +1,4 @@
+[![Release Charts](https://github.com/Plum-ops/plum-helm/actions/workflows/release.yaml/badge.svg)](https://github.com/Plum-ops/plum-helm/actions/workflows/release.yaml)
 # Plumtech Helm Chart Repository
 
 ## Usage
