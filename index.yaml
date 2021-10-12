@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  chproxy:
+  - apiVersion: v2
+    appVersion: 1.14.0
+    created: "2021-10-12T20:33:26.750399407Z"
+    description: Install chproxy to your cluster to create an endpoint for your clickhouse
+      cluster
+    digest: d1f13197cfe834b73276733af28ee69a2b6aa015cf38c7e9df958654323cfe46
+    home: https://github.com/Vertamedia/chproxy/
+    keywords:
+    - proxy
+    - clickhouse
+    - chproxy
+    - database
+    - kubernetes
+    maintainers:
+    - email: sergio.mikhno@gmail.com
+      name: mikhno-s
+    name: chproxy
+    sources:
+    - https://github.com/Vertamedia/chproxy/
+    type: application
+    urls:
+    - https://github.com/Plum-ops/plum-helm/releases/download/chproxy-1.0.1/chproxy-1.0.1.tgz
+    version: 1.0.1
+generated: "2021-10-12T20:33:26.750413223Z"
