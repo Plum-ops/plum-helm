@@ -1,0 +1,18 @@
+apiVersion: v2
+name: chproxy
+description: Install chproxy to your cluster to create an endpoint for your clickhouse cluster
+keywords:
+- proxy
+- clickhouse
+- chproxy
+- database
+- kubernetes
+type: application
+version: 1.0.0
+appVersion: "1.14.0"
+home: https://github.com/Vertamedia/chproxy/
+sources:
+- https://github.com/Vertamedia/chproxy/
+maintainers:
+- name: mikhno-s
+  email: sergio.mikhno@gmail.com
