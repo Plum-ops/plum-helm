@@ -1,0 +1,109 @@
+# Default values for chproxy.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: us.gcr.io/letsenhance/chproxy
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "v1.14.0"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  ports: 
+    - port: 80
+      targetPort: http
+      name: http
+  # In case if you want to expose chproxy outside - change service.type to LoadBalancer.
+  # It's also strictly recommended using https and restrict
+  # access by adding allowede subnets to service.loadBalancerSourceRanges
+  # externalTrafficPolicy: Cluster
+  # loadBalancerIP: 0.0.0.0
+  # loadBalancerSourceRanges: 
+  #   - 0.0.0.0/0
+
+livenessProbePort: 80
+readinessProbePort: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+      # kubernetes.io/ingress.class: nginx-internal
+      # cert-manager.io/cluster-issuer: "letsencrypt-route53"
+      # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+config: |
+  hack_me_please: true
+  server:
+    http:
+      listen_addr: ":80"
+  users:
+    - name: "default"
+      to_user: "default"
+      to_cluster: "default"
+  clusters:
+    - name: "default"
+      scheme: "http"
+      nodes: [ "clickhouse:8123"]
+      users:
+        - name: "default"
