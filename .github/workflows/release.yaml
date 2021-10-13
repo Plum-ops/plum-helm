@@ -29,6 +29,6 @@ jobs:
         uses: helm/chart-releaser-action@v1.2.1
         with:
           charts_dir: charts
-          charts_repo_url: helm.plum-ops.com
+          charts_repo_url: https://helm.plum-ops.com
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
