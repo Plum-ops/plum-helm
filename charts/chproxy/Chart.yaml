@@ -8,7 +8,7 @@ keywords:
 - database
 - kubernetes
 type: application
-version: 1.0.3
+version: 1.0.4
 appVersion: "1.14.0"
 home: https://github.com/Vertamedia/chproxy/
 sources:
