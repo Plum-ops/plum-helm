@@ -16,9 +16,9 @@ plum-helm` to see the charts.
 
 To install the chproxy chart:
 ```shell
-    helm install my-chproxy plum-helm/chproxy
+    helm install chproxy plum-helm/chproxy
 ```
 To uninstall the chart:
 ```shell
-    helm delete my-chproxy
+    helm delete chproxy
 ```
